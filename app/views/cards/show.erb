@@ -1,1 +1,15 @@
-<%= @card.name %>
+<h1>Card: <%= @card.name %></h1>
+<h2>This card represents:</h2>
+<ul>
+  <% @card.keyword_array.each do |keyword| %>
+    <li><%= keyword %></li>
+  <% end %>
+</ul>
+<h2>The <%= @card.suit.name %> suit is:</h2>
+<ul>
+  <% @card.suit.keyword_array.each do |keyword| %>
+    <li><%= keyword %></li>
+  <% end %>
+</ul>
+
+
