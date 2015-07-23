@@ -14,16 +14,18 @@
   <% end %>
 </ul>
 
-<h2>These cards reinforce <%= @card.name %></h2>
-<ul>
-  <% @card.positive_relationships.each do |relationship| %>
-    <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
-  <% end %>
-</ul>
+<% unless @card.value == 'ace' || @card.value == 'page' || @card.value == 'knight' || @card.value == 'queen' || @card.value == 'king' %>
+  <h2>These cards reinforce <%= @card.name %></h2>
+  <ul>
+    <% @card.positive_relationships.each do |relationship| %>
+      <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+    <% end %>
+  </ul>
 
-<h2>These cards oppose <%= @card.name %></h2>
-<ul>
-  <% @card.negative_relationships.each do |relationship| %>
-    <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
-  <% end %>
-</ul>
+  <h2>These cards oppose <%= @card.name %></h2>
+  <ul>
+    <% @card.negative_relationships.each do |relationship| %>
+      <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>

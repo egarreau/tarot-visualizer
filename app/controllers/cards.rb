@@ -1,3 +1,9 @@
+get '/cards/spread' do
+  @spread = Spread.first.deal
+
+  erb :'spread/show'
+end
+
 get '/cards/:id' do
   if params[:id] == 'random'
     @card = Card.all.sample
