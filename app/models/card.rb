@@ -1,5 +1,3 @@
-require_relative '../../db/config'
-
 class Card < ActiveRecord::Base
   belongs_to :position
   belongs_to :suit
