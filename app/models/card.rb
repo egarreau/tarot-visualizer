@@ -15,4 +15,21 @@ class Card < ActiveRecord::Base
       "#{self.value.capitalize} of #{self.suit.name.capitalize}"
     end
   end
+
+  def keyword_array
+    self.keywords.split('/')
+  end
+
+  def positive_relationships
+    self.influencee_relationships.select do |relationship|
+      relationship.positive
+    end
+  end
+
+  def negative_relationships
+    self.influencee_relationships.select do |relationship|
+      !relationship.positive
+    end
+  end
+
 end
