@@ -10,7 +10,7 @@ class Card < ActiveRecord::Base
 
   def name
     if self.suit.name == 'major arcana'
-      "#{self.value.capitalize}"
+      "#{self.value}"
     else
       "#{self.value.capitalize} of #{self.suit.name.capitalize}"
     end

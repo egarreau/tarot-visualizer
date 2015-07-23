@@ -13,6 +13,7 @@
 * As a user, I want to be able to create a new celtic cross spread
 * As a user, I want to be able to click on a card and see its info and its position info
 * As a user, I want to be able to hover/click on a card and see its influencing cards in the spread
+* As a user, I want a "learn more" link on each card
 
 ## Schema design
 
