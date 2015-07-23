@@ -15,4 +15,3 @@ The problem space is a tarot spread. I chose this because there are tons of diff
 ## Schema design
 
 ![Tarot schema](tarot_schema.png)
-# tarot-visualizer
