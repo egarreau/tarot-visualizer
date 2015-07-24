@@ -1,0 +1,49 @@
+.container{
+  max-width: 60%;
+  margin: auto;
+}
+
+#spread{
+  max-width: 800px;
+  margin:auto;
+}
+
+.position{
+  display: inline-block;
+  max-width: 150px;
+}
+
+.card {
+  padding:10px;
+  margin: 10px;
+  border: 1px solid #000000;
+  border-radius: 5%;
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+h1, .main-nav{
+  text-align: center;
+}
+
+.neg{
+  background: #f96b7e;
+  border-color: #bc5361;
+}
+
+.pos{
+  background: #99fc7b;
+  border-color: #65a353;
+}
+
+.current{
+  background: #cccecc;
+}
+
+

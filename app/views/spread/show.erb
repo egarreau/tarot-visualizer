@@ -1,6 +1,12 @@
-<% @spread.cards.each do |card| %>
-  <div class="card <%= card.positive_ids %> <%= card.negative_ids %>" id="<%= card.id %>"><%= card.name %></div>
-<% end %>
-
-<img src="<%= @spread.word_cloud %>">
-
+<div class="container">
+  <h1>Celtic Cross Spread</h1>
+  <div id="spread">
+    <% @spread.positions.each do |position| %>
+      <div class="position" id="position-<%= position.id %>">
+        <p><%= position.keyword_array.join(",\n") %></p>
+        <div class="card <%= position.card.positive_ids %> <%= position.card.negative_ids %>" id="<%= position.card.id %>"><a href="/cards/<%= position.card.id %>"><%= position.card.name %></a></div>
+      </div>
+    <% end %>
+  </div>
+  <img src="<%= @spread.word_cloud %>">
+</div>

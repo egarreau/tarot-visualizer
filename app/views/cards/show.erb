@@ -1,31 +1,33 @@
-<h1>Card: <%= @card.name %></h1>
+<div class="container">
+  <h1>Card: <%= @card.name %></h1>
 
-<h2>This card represents:</h2>
-<ul>
-  <% @card.keyword_array.each do |keyword| %>
-    <li><%= keyword %></li>
-  <% end %>
-</ul>
-
-<h2>The <%= @card.suit.name %> suit is:</h2>
-<ul>
-  <% @card.suit.keyword_array.each do |keyword| %>
-    <li><%= keyword %></li>
-  <% end %>
-</ul>
-
-<% unless @card.value == 'ace' || @card.value == 'page' || @card.value == 'knight' || @card.value == 'queen' || @card.value == 'king' %>
-  <h2>These cards reinforce <%= @card.name %></h2>
+  <h2>This card represents:</h2>
   <ul>
-    <% @card.positive_relationships.each do |relationship| %>
-      <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+    <% @card.keyword_array.each do |keyword| %>
+      <li><%= keyword %></li>
     <% end %>
   </ul>
 
-  <h2>These cards oppose <%= @card.name %></h2>
+  <h2>The <%= @card.suit.name %> suit is:</h2>
   <ul>
-    <% @card.negative_relationships.each do |relationship| %>
-      <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+    <% @card.suit.keyword_array.each do |keyword| %>
+      <li><%= keyword %></li>
     <% end %>
   </ul>
-<% end %>
+
+  <% unless @card.value == 'ace' || @card.value == 'page' || @card.value == 'knight' || @card.value == 'queen' || @card.value == 'king' %>
+    <h2>These cards reinforce <%= @card.name %></h2>
+    <ul>
+      <% @card.positive_relationships.each do |relationship| %>
+        <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+      <% end %>
+    </ul>
+
+    <h2>These cards oppose <%= @card.name %></h2>
+    <ul>
+      <% @card.negative_relationships.each do |relationship| %>
+        <li><a href="/cards/<%= relationship.influencer_id %>"><%= relationship.influencer.name %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
