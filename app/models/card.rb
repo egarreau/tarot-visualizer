@@ -32,4 +32,40 @@ class Card < ActiveRecord::Base
     end
   end
 
+  def positive_influencer_of
+    positive_influences = self.influencer_relationships.map do |relationship|
+      if relationship.positive
+        relationship.influencee
+      end
+    end
+    positive_influences.compact
+  end
+
+  def negative_influencer_of
+    negative_influences = self.influencer_relationships.map do |relationship|
+      if !relationship.positive
+        relationship.influencee
+      end
+    end
+    negative_influences.compact
+  end
+
+  def positive_ids
+    id_array = positive_influencer_of.map do |influencee|
+      if influencee.position && influencee.position.spread == self.position.spread
+        "positive-#{influencee.id}"
+      end
+    end
+    id_array.compact.join(" ")
+  end
+
+  def negative_ids
+    id_array = negative_influencer_of.map do |influencee|
+      if influencee.position && influencee.position.spread == self.position.spread
+        "negative-#{influencee.id}"
+      end
+    end
+    id_array.compact.join(" ")
+  end
+
 end

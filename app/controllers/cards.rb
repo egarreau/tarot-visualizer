@@ -1,5 +1,7 @@
 get '/cards/spread' do
-  @spread = Spread.first.deal
+  Spread.first.scrap
+  Spread.first.deal
+  @spread = Spread.first
 
   erb :'spread/show'
 end

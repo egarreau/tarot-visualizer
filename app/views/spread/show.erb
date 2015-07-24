@@ -1,5 +1,6 @@
-<ul>
-  <% @spread.each do |position| %>
-    <li><%= position.card.name %></li>
-  <% end %>
-</ul>
+<% @spread.cards.each do |card| %>
+  <div class="card <%= card.positive_ids %> <%= card.negative_ids %>" id="<%= card.id %>"><%= card.name %></div>
+<% end %>
+
+<img src="<%= @spread.word_cloud %>">
+

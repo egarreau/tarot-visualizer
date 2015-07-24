@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'unirest'
+
 # PostgreSQL driver
 gem 'pg'
 
