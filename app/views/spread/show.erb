@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Celtic Cross Spread</h1>
+  <img src="<%= @spread.word_cloud %>">
   <div id="spread">
     <% @spread.positions.each do |position| %>
       <div class="position" id="position-<%= position.id %>">
@@ -8,5 +9,4 @@
       </div>
     <% end %>
   </div>
-  <img src="<%= @spread.word_cloud %>">
 </div>
